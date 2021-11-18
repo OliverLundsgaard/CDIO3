@@ -1,3 +1,5 @@
+package com;
+
 public class Chancekortfortolker {
 
     public void brugKort(Spiller s, Chancekort kort){

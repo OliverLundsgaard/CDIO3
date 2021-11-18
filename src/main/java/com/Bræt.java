@@ -1,10 +1,12 @@
+package com;
+
 public class Bræt {
 
     private Felt[] felts;
 
     public Bræt() {
         felts = new Felt[24];
-        felts[0] = new Start("Start");
+        felts[0] = new Start("com.Start");
         felts[1] = new Ejendomsfelt("Burgerbaren", 1);
         felts[2] = new Ejendomsfelt("Pizzaria", 1);
         felts[3] = new Chance("Chancen");

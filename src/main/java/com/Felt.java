@@ -1,3 +1,5 @@
+package com;
+
 public abstract class Felt {
     protected String navn;
     protected Felt næstefelt;

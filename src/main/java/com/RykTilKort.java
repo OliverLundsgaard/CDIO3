@@ -1,3 +1,5 @@
+package com;
+
 public class RykTilKort extends Chancekort {
 
     private Felt felt;

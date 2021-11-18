@@ -1,3 +1,5 @@
+package com;
+
 public class BetalKort extends Chancekort {
 
     private int beløb;

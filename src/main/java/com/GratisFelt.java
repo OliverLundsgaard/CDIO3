@@ -1,3 +1,5 @@
+package com;
+
 public class GratisFelt extends Chancekort {
 
     private Felt felt;

@@ -1,3 +1,5 @@
+package com;
+
 public class FængselKort extends Chancekort {
 
     private Felt felt;

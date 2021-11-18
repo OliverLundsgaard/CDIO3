@@ -1,3 +1,5 @@
+package com;
+
 public class Ejendomsfelt extends Felt{
     private  int pris;
     private Spiller ejer;

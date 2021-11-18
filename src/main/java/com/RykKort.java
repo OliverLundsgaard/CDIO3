@@ -1,3 +1,5 @@
+package com;
+
 public class RykKort extends Chancekort{
 
     private int maks_distance;

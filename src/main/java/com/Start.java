@@ -1,7 +1,9 @@
-public class Fængselsfelt extends Felt{
+package com;
+
+public class Start extends Felt {
 
 
-    Fængselsfelt(String navn) {
+    Start(String navn) {
         super(navn);
     }
 

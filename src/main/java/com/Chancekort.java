@@ -1,3 +1,5 @@
+package com;
+
 public abstract class Chancekort {
 
     private String iden;

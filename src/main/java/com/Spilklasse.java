@@ -1,3 +1,5 @@
+package com;
+
 public class Spilklasse {
     private Spiller[] spillere;
     private Spiller harTur;

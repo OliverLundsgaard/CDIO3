@@ -1,3 +1,5 @@
+package com;
+
 public class Spiller {
     private int money = 35;
     private Felt felt;
