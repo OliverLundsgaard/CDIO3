@@ -12,7 +12,6 @@ public class Ejendomsfelt extends Felt{
     @Override
     void ramt(Spiller spiller) {
         if (ejer == null) {
-            ejer.updateMoney(0);
         }
 
 

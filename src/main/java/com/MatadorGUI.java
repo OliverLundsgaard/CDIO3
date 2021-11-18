@@ -27,6 +27,16 @@ public class MatadorGUI {
     }
 
     private void kør_spillet(){
+        opdaterBiler();
+        while(!spilklasse.harFundetEnVinder()) {
+            gui.getUserButtonPressed("Er I klar til næste tur?", "Ja det er vi");
+            spilklasse.tag_næste_tur();
+
+            opdaterBiler();
+        }
+    }
+
+    private void opdaterBiler(){
         flytAlleBiler();
         for (int i = 0; i < spilklasse.getSpillere().length; i++) {
             GUI_Field nuværende_felt = felterIGUI.get(spilklasse.getSpillere()[i].getPosition());

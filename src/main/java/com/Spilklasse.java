@@ -3,17 +3,28 @@ package com;
 public class Spilklasse {
     private Spiller[] spillere;
     private Spiller harTur;
+    private Spiller vinder;
     private Terning terning;
     private Bræt bræt;
     public Spilklasse(int antal_spillere){
-        this.spillere = new Spiller[antal_spillere];
-        harTur = this.spillere[0];
         bræt = new Bræt();
+        this.spillere = new Spiller[antal_spillere];
+        for (int i = 0; i < antal_spillere; i++) {
+            spillere[i] = new Spiller(bræt.getStartFelt());
+        }
+        harTur = this.spillere[0];
+        vinder = null;
+        terning = new Terning();
     }
     public Spilklasse(){
-        this.spillere = new Spiller[2];
-        harTur = this.spillere[0];
         bræt = new Bræt();
+        this.spillere = new Spiller[2];
+        for (int i = 0; i < 2; i++) {
+            spillere[i] = new Spiller(bræt.getStartFelt());
+        }
+        harTur = this.spillere[0];
+        vinder = null;
+        terning = new Terning();
     }
 
     public void setAntalSpillere(int antal){
@@ -45,5 +56,9 @@ public class Spilklasse {
 
     public Spiller[] getSpillere() {
         return spillere;
+    }
+
+    public boolean harFundetEnVinder(){
+        return vinder != null;
     }
 }
