@@ -12,9 +12,12 @@ public class Ejendomsfelt extends Felt{
     @Override
     void ramt(Spiller spiller) {
         if (ejer == null) {
+            ejer = spiller;
+            spiller.setMoney(spiller.getMoney() - pris);
+        }else{
+            ejer.setMoney(ejer.getMoney() + pris);
+            spiller.setMoney(spiller.getMoney()- pris);
         }
-
-
     }
 
     public void setEjer(Spiller ejer) {

@@ -31,22 +31,44 @@ public class MatadorGUI {
         while(!spilklasse.harFundetEnVinder()) {
             gui.getUserButtonPressed("Er I klar til næste tur?", "Ja det er vi");
             spilklasse.tag_næste_tur();
-
+            setFelterEjer();
             opdaterBiler();
+            setSpillerPenge();
+        }
+    }
+
+    private void setSpillerPenge(){
+        for (int i = 0; i < spilklasse.getSpillere().size(); i++) {
+            GUI_Player spillerNu = spillerIGUI.get(spilklasse.getSpillere().get(i));
+            spillerNu.setBalance(spilklasse.getSpillere().get(i).getMoney());
         }
     }
 
     private void opdaterBiler(){
         flytAlleBiler();
-        for (int i = 0; i < spilklasse.getSpillere().length; i++) {
-            GUI_Field nuværende_felt = felterIGUI.get(spilklasse.getSpillere()[i].getPosition());
-            nuværende_felt.setCar(spillerIGUI.get(spilklasse.getSpillere()[i]), true);
+        for (int i = 0; i < spilklasse.getSpillere().size(); i++) {
+            GUI_Field nuværende_felt = felterIGUI.get(spilklasse.getSpillere().get(i).getPosition());
+            nuværende_felt.setCar(spillerIGUI.get(spilklasse.getSpillere().get(i)), true);
         }
     }
 
     private void flytAlleBiler(){
         for (int i = 0; i < lavGuiFelter().length; i++) {
             lavGuiFelter()[i].removeAllCars();
+        }
+    }
+
+    private void setFelterEjer(){
+        for(int i = 0; i < spilklasse.getBræt().getFelts().length; i++){
+            if(spilklasse.getBræt().getFelts()[i].getClass() == Ejendomsfelt.class)
+            {
+                Ejendomsfelt felt = ((Ejendomsfelt) spilklasse.getBræt().getFelts()[i]);
+                if(felt.getEjer() != null)
+                {
+                    String navn = spillerIGUI.get(felt.getEjer()).getName();
+                    felterIGUI.get(felt).setSubText(navn);
+                }
+            }
         }
     }
 
@@ -58,8 +80,8 @@ public class MatadorGUI {
         for (int i = 0; i < antal; i++) {
             GUI_Car bil = new GUI_Car();
             bil.setPrimaryColor(farver[i]);
-            spillere[i] = new GUI_Player(navne[i], spilklasse.getSpillere()[i].getMoney(), bil);
-            spillerIGUI.put(spilklasse.getSpillere()[i], spillere[i]);
+            spillere[i] = new GUI_Player(navne[i], spilklasse.getSpillere().get(i).getMoney(), bil);
+            spillerIGUI.put(spilklasse.getSpillere().get(i), spillere[i]);
             gui.addPlayer(spillere[i]);
         }
     }
