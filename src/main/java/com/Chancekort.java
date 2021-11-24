@@ -9,8 +9,11 @@ public abstract class Chancekort {
         this.iden = iden;
     }
 
-    public abstract void brug(Spiller s);
+    public abstract void brug(Spiller s) throws Exception;
 
+    public String getIden() {
+        return iden;
+    }
 }
 
 /*

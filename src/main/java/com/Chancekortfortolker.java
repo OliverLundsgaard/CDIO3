@@ -2,7 +2,17 @@ package com;
 
 public class Chancekortfortolker {
 
-    public void brugKort(Spiller s, Chancekort kort){
+    private static Chancekortfortolker instans;
+    private Chancekortfortolker(){
+    }
+    public static Chancekortfortolker getInstance() {
+        if(instans == null){
+            instans = new Chancekortfortolker();
+        }
+        return instans;
+    }
+
+    public void brugKort(Spiller s, Chancekort kort) throws Exception{
 
         if(kort.getClass() == RykKort.class){
             int ønsket_ryk = 0;

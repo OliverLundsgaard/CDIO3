@@ -7,10 +7,14 @@ public abstract class Felt {
         this.navn = navn;
     }
 
-    abstract void ramt(Spiller spiller);
+    abstract void ramt(Spiller spiller) throws Exception;
 
     public Felt getNæstefelt() {
         return næstefelt;
+    }
+
+    public void erLandetMidlerTidigtPå(Spiller spiller){
+
     }
 
     public void setNæstefelt(Felt næstefelt) {
