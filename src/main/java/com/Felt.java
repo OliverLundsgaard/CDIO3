@@ -1,4 +1,4 @@
-import com.Spiller;
+package com;
 
 public abstract class Felt {
     protected String navn;

@@ -1,4 +1,3 @@
-
 import com.BetalKort;
 import com.Spiller;
 import com.Start;
@@ -20,5 +19,4 @@ public class BrugChanceKort {
 
 
 }
-
 

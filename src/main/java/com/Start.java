@@ -3,7 +3,7 @@ package com;
 public class Start extends Felt {
 
 
-    Start(String navn) {
+    public Start(String navn) {
         super(navn);
     }
 
