@@ -36,10 +36,9 @@ public class Spilklasse {
         harTur = spillere.get(0);
     }
 
-    public void tag_næste_tur(){
+    public void tag_næste_tur() throws Exception {
         int flyt = terning.rul();
         harTur.ryk(flyt);
-        System.out.println(harTur);
         skift_til_næste_spiller();
     }
 
@@ -61,7 +60,20 @@ public class Spilklasse {
         return spillere;
     }
 
-
+    public Spiller getHarTur() {
+        return harTur;
+    }
+    public Spiller havdeTurFør(){
+        Spiller tidligereSpiller = spillere.get(0);
+        for (int i = 1; i < spillere.size(); i++){
+            if(harTur == spillere.get(i)){
+                return tidligereSpiller;
+            }else {
+                tidligereSpiller = spillere.get(i);
+            }
+        }
+        return tidligereSpiller;
+    }
     public boolean harFundetEnVinder(){
         return vinder != null;
     }

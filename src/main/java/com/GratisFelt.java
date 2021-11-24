@@ -2,16 +2,16 @@ package com;
 
 public class GratisFelt extends Chancekort {
 
-    private Felt felt;
+    private String felt;
 
-    public GratisFelt(String iden, Felt felt) {
+    public GratisFelt(String iden, String felt) {
         super(iden);
         this.felt=felt;
     }
 
     @Override
-    public void brug(Spiller s) {
-        while(!s.getPosition().equals(felt)) {
+    public void brug(Spiller s) throws Exception {
+        while(!s.getPosition().navn.equals(felt)) {
             s.ryk(1);
         }
         Ejendomsfelt nuværendeFelt = ((Ejendomsfelt) s.getPosition());

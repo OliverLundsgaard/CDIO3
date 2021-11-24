@@ -2,16 +2,16 @@ package com;
 
 public class RykTilKort extends Chancekort {
 
-    private Felt felt;
+    private String feltIdentifier;
 
-    public RykTilKort(String iden, Felt felt) {
+    public RykTilKort(String iden, String felt) {
         super(iden);
-        this.felt = felt;
+        this.feltIdentifier = felt;
     }
 
     @Override
-    public void brug(Spiller s) {
-        s.teleporterTil(felt);
+    public void brug(Spiller s) throws Exception {
+        s.ryk(feltIdentifier);
     }
 
 }

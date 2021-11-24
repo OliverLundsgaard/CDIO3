@@ -16,7 +16,7 @@ public class RykKort extends Chancekort{
     }
 
     @Override
-    public void brug(Spiller s) {
+    public void brug(Spiller s) throws Exception {
         s.ryk(ønsket_ryk);
     }
 }

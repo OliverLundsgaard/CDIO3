@@ -13,8 +13,7 @@ public class MatadorGUI {
     GUI_Player[] spillere;
     GUI gui;
     Spilklasse spilklasse;
-    public MatadorGUI()
-    {
+    public MatadorGUI() throws Exception {
         GUI.setNull_fields_allowed(true);
         this.spilklasse = new Spilklasse();
         link_felter();
@@ -26,11 +25,24 @@ public class MatadorGUI {
         kør_spillet();
     }
 
-    private void kør_spillet(){
+    private void kør_spillet() throws Exception {
         opdaterBiler();
         while(!spilklasse.harFundetEnVinder()) {
             gui.getUserButtonPressed("Er I klar til næste tur?", "Ja det er vi");
-            spilklasse.tag_næste_tur();
+            try {
+                spilklasse.tag_næste_tur();
+            }catch (Exception e){
+                if(e.getMessage().equals("I fængsel")){
+                    gui.showMessage("For at rykke ud af fængslet skal du betale 1$");
+                    spilklasse.getHarTur().setMoney(spilklasse.getHarTur().getMoney()-1);
+                    spilklasse.getHarTur().setInPrison(false);
+                    spilklasse.tag_næste_tur();
+                }
+            }
+            if(spilklasse.havdeTurFør().isHarLigeTrukketChancekort()){
+                gui.displayChanceCard(spilklasse.havdeTurFør().getProperty());
+                spilklasse.havdeTurFør().setHarLigeTrukketChancekort(false);
+            }
             setFelterEjer();
             opdaterBiler();
             setSpillerPenge();

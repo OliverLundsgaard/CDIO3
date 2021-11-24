@@ -8,6 +8,11 @@ public class Start extends Felt {
     }
 
     @Override
+    public void erLandetMidlerTidigtPå(Spiller spiller) {
+        spiller.setMoney(spiller.getMoney()+2);
+    }
+
+    @Override
     void ramt(Spiller spiller) {
 
     }
