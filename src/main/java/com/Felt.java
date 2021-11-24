@@ -1,4 +1,4 @@
-package com;
+import com.Spiller;
 
 public abstract class Felt {
     protected String navn;
@@ -15,6 +15,10 @@ public abstract class Felt {
 
     public void erLandetMidlerTidigtPå(Spiller spiller){
 
+    }
+
+    public String getNavn() {
+        return navn;
     }
 
     public void setNæstefelt(Felt næstefelt) {
