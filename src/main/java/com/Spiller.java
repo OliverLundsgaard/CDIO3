@@ -74,7 +74,7 @@ public class Spiller {
         if(this.felt == felt){
             felt.ramt(this);
         }else{
-            felt = felt.getNæstefelt();
+            this.felt = this.felt.getNæstefelt();
             teleporterTil(felt);
         }
     }
