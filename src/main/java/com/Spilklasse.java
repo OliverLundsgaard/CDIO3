@@ -39,6 +39,7 @@ public class Spilklasse {
     public void tag_næste_tur() throws Exception {
         int flyt = terning.rul();
         harTur.ryk(flyt);
+        findVinder();
         skift_til_næste_spiller();
     }
 
@@ -58,6 +59,19 @@ public class Spilklasse {
 
     public ArrayList<Spiller> getSpillere() {
         return spillere;
+    }
+
+    private void findVinder(){
+        for (Spiller spiller: spillere) {
+            if(spiller.getMoney() < 0){
+                Spiller spillerMedFlestPenge = spillere.get(0);
+                for(int i = 0; i < spillere.size(); i++){
+                    if(spillere.get(i).getMoney() > spillerMedFlestPenge.getMoney())
+                        spillerMedFlestPenge = spillere.get(i);
+                }
+                vinder = spillerMedFlestPenge;
+            }
+        }
     }
 
     public Spiller getHarTur() {

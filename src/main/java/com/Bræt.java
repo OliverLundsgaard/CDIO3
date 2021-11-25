@@ -6,13 +6,13 @@ public class Bræt {
 
     public Bræt() {
         felts = new Felt[24];
-        felts[0] = new Start("com.Start");
+        felts[0] = new Start("Start");
         felts[1] = new Ejendomsfelt("Burgerbaren", 1);
         felts[2] = new Ejendomsfelt("Pizzaria", 1);
         felts[3] = new Chance("Chancen");
         felts[4] = new Ejendomsfelt("Slikbutikken", 1);
         felts[5] = new Ejendomsfelt("Iskiosken", 1);
-        felts[6] = new Feltudenvaerdi("På besøg i fængsel");
+        felts[6] = new Besøgsfelt("På besøg i fængsel");
         felts[7] = new Ejendomsfelt("Museet", 2);
         felts[8] = new Ejendomsfelt("Biblioteket", 2);
         felts[9] = new Chance("Chancen");
@@ -24,7 +24,7 @@ public class Bræt {
         felts[15] = new Chance("Chancen");
         felts[16] = new Ejendomsfelt("Legetøjsbutikken", 3);
         felts[17] = new Ejendomsfelt("Dyrehandlen", 3);
-        felts[18] = new Fængselsfelt("Gå i fængsel");
+        felts[18] = new Fængselsfelt("Gå i fængsel", (Besøgsfelt) felts[6]);
         felts[19] = new Ejendomsfelt("Bowlinghallen", 4);
         felts[20] = new Ejendomsfelt("Zoo", 4);
         felts[21] = new Chance("Chancen");
