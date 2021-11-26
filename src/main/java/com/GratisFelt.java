@@ -11,9 +11,7 @@ public class GratisFelt extends Chancekort {
 
     @Override
     public void brug(Spiller s) throws Exception {
-        while(!s.getPosition().navn.equals(felt)) {
-            s.ryk(1);
-        }
+        s.ryk(felt);
         Ejendomsfelt nuværendeFelt = ((Ejendomsfelt) s.getPosition());
         if (nuværendeFelt.getEjer() != null){
             s.updateMoney(-nuværendeFelt.getPris());
